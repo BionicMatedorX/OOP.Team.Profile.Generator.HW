@@ -1,8 +1,8 @@
 const Employee = require("../EmployeeClasses/Employee");
 
-describe('Making Employee', () => {
+describe("Employee", () => {
 
-    test('Making new Employee', () => {
+    it("Can instantiate Employee instance", () => {
 
         const e = new Employee();
 
@@ -10,9 +10,9 @@ describe('Making Employee', () => {
 
     });
 
-    test('Can make name', () => {
+    it("Can set name via constructor arguments", () => {
 
-        const name = "Chadwick";
+        const name = "Alice";
 
         const e = new Employee(name);
 
@@ -20,21 +20,21 @@ describe('Making Employee', () => {
 
     });
 
-    test("Can make id", () => {
+    it("Can set id via constructor argument", () => {
 
         const testValue = 100;
 
-        const e = new Employee("Chadwick", testValue);
+        const e = new Employee("Foo", testValue);
 
         expect(e.id).toBe(testValue);
 
     });
 
-    test("Can make email", () => {
+    it("Can set email via constructor argument", () => {
 
-        const testValue = "test@test.org";
+        const testValue = "test@test.com";
 
-        const e = new Employee("Chadwick", 1, testValue);
+        const e = new Employee("Foo", 1, testValue);
 
         expect(e.email).toBe(testValue);
 
@@ -42,9 +42,9 @@ describe('Making Employee', () => {
 
     describe("getName", () => {
 
-        test("Can get name via getName()", () => {
+        it("Can get name via getName()", () => {
 
-            const testValue = "Chadwick";
+            const testValue = "Alice";
 
             const e = new Employee(testValue);
 
@@ -52,44 +52,46 @@ describe('Making Employee', () => {
 
         });
     });
-
+        
     describe("getId", () => {
 
-        test("Can get id via getId()", () => {
+        it("Can get id via getId()", () => {
 
             const testValue = 100;
 
-            const e = new Employee("Chadwick", testValue);
+            const e = new Employee("Foo", testValue);
 
             expect(e.getId()).toBe(testValue);
 
         });
     });
-
+        
     describe("getEmail", () => {
 
-        test("Can get email via getEmail()", () => {
+        it("Can get email via getEmail()", () => {
 
-            const testValue = "test@test.org";
+            const testValue = "test@test.com";
 
-            const e = new Employee("Chadwick", 1, testValue);
+            const e = new Employee("Foo", 1, testValue);
 
             expect(e.getEmail()).toBe(testValue);
 
         });
-    });
 
+    });
+        
     describe("getRole", () => {
 
-        test("getRole() should return \"Employee\"", () => {
+        it("getRole() should return \"Employee\"", () => {
 
             const testValue = "Employee";
-
-            const e = new Employee("Chadwick", 1, "test@test.org");
+            
+            const e = new Employee("Alice", 1, "test@test.com");
 
             expect(e.getRole()).toBe(testValue);
-
+            
         });
+        
     });
-
+    
 });
